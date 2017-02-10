@@ -44,7 +44,33 @@ public class Solution {
         Collections.sort(list, new Comparator<Stock>() {
             public int compare(Stock stock1, Stock stock2) {
 
-                return 0;
+                String name1 = (String) stock1.get("name");
+                String name2 = (String) stock2.get("name");
+                int result = name1.compareTo(name2);
+                if (result !=0)
+                    return result;
+                else {
+
+                    Date date1 = (Date)stock1.get("date");
+                    Date date2 = (Date)stock2.get("date");
+                    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMdd");
+                    result = simpleDateFormat.format(date1).compareTo(simpleDateFormat.format(date2));
+                    if (result != 0)
+                        return -result;
+                    else {
+                        Double s1, s2;
+                        if (stock1.containsKey("open") && stock1.containsKey("last")
+                                && stock2.containsKey("open") && stock2.containsKey("last")) {
+                            s1 = (Double) stock1.get("last") - (Double) stock1.get("open");
+                            s2 = (Double) stock2.get("last") - (Double) stock2.get("open");
+                        } else {
+                            s1 = (Double) stock1.get("change");
+                            s2 = (Double) stock2.get("change");
+                        }
+
+                        return -Double.compare(s1, s2);
+                    }
+                }
             }
         });
     }
