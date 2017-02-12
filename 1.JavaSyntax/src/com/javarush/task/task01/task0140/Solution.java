@@ -10,8 +10,8 @@ public class Solution {
     public static void main(String[] args) {
         int a;
         //напишите тут ваш код
-        a = new Scanner(System.in).nextInt();
-
+        Scanner scanner = new Scanner(System.in);
+        a = scanner.nextInt();
         System.out.println(a * a);
     }
 }
