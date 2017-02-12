@@ -13,17 +13,19 @@ import java.util.Comparator;
 public class Solution {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
+
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        ArrayList<String> list = new ArrayList<String>();
-        ArrayList<String> list1 = new ArrayList<String>();
+        ArrayList<String> list = new ArrayList<>();
 
         int count = 0;
         while (count < 10) {
             String s = bufferedReader.readLine();
-            list.add(s);
+            if (!s.equals(""))
+                list.add(s);
             count++;
         }
 
+        ArrayList<String> list1 = new ArrayList<>();
         list1.addAll(list);
 
         Collections.sort(list1, new Comparator<String>() {
