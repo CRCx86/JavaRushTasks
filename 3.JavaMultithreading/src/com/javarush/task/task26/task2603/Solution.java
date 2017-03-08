@@ -1,7 +1,5 @@
 package com.javarush.task.task26.task2603;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 
 /*
