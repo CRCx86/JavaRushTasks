@@ -12,6 +12,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class Server
 {
     private static Map<String, Connection> connectionMap = new ConcurrentHashMap<>();
+
     public static void main(String[] args) throws IOException {
         int port = ConsoleHelper.readInt();
 
