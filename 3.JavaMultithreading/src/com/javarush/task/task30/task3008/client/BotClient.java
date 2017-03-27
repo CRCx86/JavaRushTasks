@@ -8,12 +8,25 @@ import java.util.Calendar;
 
 /**
  * Created by Aleksandr on 26.03.2017.
+ *
+ * бот, который будет представлять собой клиента, который
+ * автоматически будет отвечать на некоторые команды. Проще всего реализовать бота,
+ * который сможет отправлять текущее время или дату, когда его кто-то об этом попросит.
+ *
  */
 public class BotClient extends Client {
 
+    /*
+    * внутренний класс BotSocketThread унаследованный от SocketThread.
+    * */
     public class BotSocketThread extends SocketThread {
         @Override
         protected void clientMainLoop() throws IOException, ClassNotFoundException {
+
+            /*
+            * С помощью метода sendTextMessage() отправь сообщение с текстом
+            * "Привет чатику. Я бот. Понимаю команды: дата, день, месяц, год, время, час, минуты, секунды."
+            * */
             sendTextMessage("Привет чатику. Я бот. Понимаю команды: дата, день, месяц, год, время, час, минуты, секунды.");
             super.clientMainLoop();
         }
@@ -66,22 +79,45 @@ public class BotClient extends Client {
 
             if (format != null)
             {
+                /*
+                * Для получения текущей даты необходимо использовать класс Calendar и метод
+                * getTime().
+                *
+                * Ответ должен содержать имя клиента, который прислал запрос и ожидает ответ,
+                * например, если Боб отправил запрос "время", мы должны отправить ответ
+                * "Информация для Боб: 12:30:47".
+                * */
                 sendTextMessage("Информация для " + senderName + ": " + format.format(Calendar.getInstance().getTime()));
             }
 
         }
     }
 
+
+    /*
+    * getUserName(), метод должен генерировать новое имя бота, например:
+    * date_bot_XX, где XX – любое число от 0 до 99. Этот метод должен возвращать
+    * каждый раз новое значение, на случай, если на сервере захотят
+    * зарегистрироваться несколько ботов, у них должны быть разные имена.
+    * */
     @Override
     protected String getUserName() {
         return "date_bot_" + (int)(Math.random() * 100);
     }
 
+    /*
+    * 	shouldSentTextFromConsole(). Он должен всегда возвращать false. Мы не хотим,
+    * 	чтобы бот отправлял текст введенный в консоль.
+    * */
     @Override
     protected boolean shouldSendTextFromConsole() {
         return false;
     }
 
+    /*
+    * getSocketThread(). Он должен создавать и возвращать объект класса
+    * BotSocketThread.
+    * */
     @Override
     protected SocketThread getSocketThread() {
         return new BotSocketThread();

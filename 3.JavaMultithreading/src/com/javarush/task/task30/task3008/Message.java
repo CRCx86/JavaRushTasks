@@ -4,11 +4,13 @@ import java.io.Serializable;
 
 /**
  * Created by Aleksandr on 23.03.2017.
+ *
+ * Message – класс, отвечающий за пересылаемые сообщения
  */
 public class Message implements Serializable {
 
-    private final MessageType type;
-    private final String data;
+    private final MessageType type; // поле типа MessageType type, которое будет содержать тип сообщения
+    private final String data; // Константное поле типа String data, которое будет содержать данные сообщения
 
     public Message(MessageType type) {
         this.type = type;
