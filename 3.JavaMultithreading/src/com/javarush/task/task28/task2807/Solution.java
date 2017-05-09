@@ -12,7 +12,7 @@ public class Solution {
         //Add your code here
         LinkedBlockingQueue<Runnable> linkedBlockingQueue = new LinkedBlockingQueue<>();
         for (int i = 0; i < 10; i++) {
-            int finalI = i;
+            final int finalI = i;
             linkedBlockingQueue.add(new Runnable() {
                 @Override
                 public void run() {

@@ -19,7 +19,7 @@ public class Solution {
     private final URL javarushVkGroupUrl3Child;
 
     private volatile ExecutorService executorService;
-    private final Set<URL> urlsForProcessing = Collections.synchronizedSet(new HashSet<>());
+    private final Set<URL> urlsForProcessing = Collections.synchronizedSet(new HashSet<URL>());
 
     public static void main(String[] args) throws MalformedURLException, InterruptedException {
         Solution solution = new Solution();

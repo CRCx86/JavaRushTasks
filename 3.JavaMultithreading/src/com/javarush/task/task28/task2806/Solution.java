@@ -13,7 +13,7 @@ public class Solution {
         //Add your code here
         ExecutorService service = Executors.newFixedThreadPool(5);
         for (int i = 0; i < 10; i++) {
-            int finalI = i + 1;
+            final int finalI = i + 1;
             service.submit(new Runnable() {
                 @Override
                 public void run() {

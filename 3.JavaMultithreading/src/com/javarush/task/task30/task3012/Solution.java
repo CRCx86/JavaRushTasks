@@ -14,6 +14,7 @@ public class Solution {
         solution.createExpression(1234);
         solution.createExpression(3000);
         solution.createExpression(1000000);
+        solution.createExpression(2);
     }
 
     public void createExpression(int number) {

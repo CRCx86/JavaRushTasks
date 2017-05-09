@@ -19,7 +19,7 @@ public class Solution {
         //implement logic here
 
         Arrays.sort(array);
-        Integer mediana;
+        final Integer mediana;
 
         if (array.length % 2 == 0) {
             Integer x1 = array[(0 + array.length - 1) / 2];
