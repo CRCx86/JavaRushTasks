@@ -7,5 +7,30 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="jackson-annotations-2.9.0.pr3" level="project" />
+    <orderEntry type="library" name="org.apache.directory.studio:org.slf4j.api:1.7.2" level="application" />
+    <orderEntry type="library" name="jackson-annotations-2.9.0.pr3" level="application" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/slf4j-log4j13-1.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/slf4j-jdk14-1.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="com.bluecatcode.guava:guava-19.0-extended:1.1.0" level="application" />
+    <orderEntry type="library" name="org.apache.commons:commons-collections4:4.0" level="application" />
+    <orderEntry type="library" name="com.bluecatcode.junit:junit-4.12-extended:1.1.0" level="application" />
+    <orderEntry type="library" name="org.hamcrest:hamcrest-core:1.3" level="application" />
   </component>
 </module>

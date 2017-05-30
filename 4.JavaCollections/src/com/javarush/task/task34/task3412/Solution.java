@@ -6,7 +6,7 @@ import org.slf4j.LoggerFactory;
 import java.rmi.registry.LocateRegistry;
 import java.util.Date;
 
-/* 
+/*
 Добавление логирования в класс
 */
 
