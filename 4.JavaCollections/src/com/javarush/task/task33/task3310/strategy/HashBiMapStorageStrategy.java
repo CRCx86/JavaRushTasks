@@ -36,7 +36,7 @@ public class HashBiMapStorageStrategy implements StorageStrategy {
     public Long getKey(String value) {
 
         return (Long) data.inverse().get(value);
-        
+
     }
 
     @Override
